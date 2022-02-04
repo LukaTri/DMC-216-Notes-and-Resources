@@ -1,0 +1,8 @@
+A short assignment quizzing you on the basics of the normal distribution.
+
+Hypothesis Testing Review:
+	1. Formulate Hypotheses (Null and Alternate), Set a level of rist (usually 0.05)
+	2. Collect Data.
+	3. Summerize Data, compute test statistic (mean or proportion).
+	4. Compute p-value using the normal distribution.
+	5. Make a decision (Reject Ho, or Fail to Reject Ho).

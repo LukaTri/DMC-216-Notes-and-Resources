@@ -1,0 +1,5 @@
+skew = 0 == not skewed.
+kurtosis == how pointy is the model. 0 == normal pointy, + == really pointy, 
+- == flat.
+When you compute skew and kurtosis, you can measure how far from normal a
+distriution is.
