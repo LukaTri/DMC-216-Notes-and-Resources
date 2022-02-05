@@ -1,4 +1,12 @@
 \documentclass[a4paper, 12pt] {article}
+
+\usepackage[T1]{fontenc}
+\usepackage{paralist}
+\usepackage{amsmath}
+\usepackage{romannum}
+
+\newcommand{\head}[1]{\textnormal{\textbf{#1}}}
+
 \begin{document}
 
 \title{Chapter Notes for DMC 216: Nonparametric Statistics}
@@ -6,7 +14,88 @@
 \maketitle
 
 \section{Chapter One}
+Parametric statistics is based around the idea that the given data is of a normal distribution. In conjunction, nonparametric statistics is based around data that is collected from a non-normal distribution. This can mean data that is purly nominal (categorical), ranked, based on scales, or simply, do not follow a normal distribution (either visually, or through mathematical tests).\\[2mm]
+Some parametric assumptions include samples that:
 
+\begin{enumerate}
+	\item Are randomly drawn from a normally distributed population.
+	\item Consists of indendent observations, except for paired values.
+	\item Consists of values on an interval or ratio measurement scale.
+	\item Have respective populations of aproximatily equal variance.
+	\item Are adequatitely large.
+		\begin{compactitem}
+		\item n > 30
+		\item n > 20
+		\item n > 10
+		\item (Per group as an absolute minimum).
+		\end{compactitem}
+	\item Approximately resembles a normal distribution.
+\end{enumerate}
+Although it is not required to have all of these assumptions to be checked off when analyzing your data, it is sometimes safe to not have one of these assumptions in your data. For example, you may need to increase your sample size to normalize your data (which, in turns, shows that your data is \emph{actually} normal, and not nonparametric).\\[2mm]
+There are different ways to measure scales with the given data:
+\begin{itemize}
+	\item \emph{\textbf{Dichotomous}} is a measure of two conditions. There are two types of dichotomous scales:
+		\begin{itemize}
+			\item \emph{\textbf{Discrete dichotomous}} has no particular order.
+				\begin{itemize}
+					\item male vs. female, heads vs. tails.
+				\end{itemize}
+			\item \emph{\textbf{Continous dichotomous}} has a measurement.
+				\begin{itemize}
+					\item pass/fail, young/old
+				\end{itemize}
+		\end{itemize}
+	\item \emph{\textbf{Ordinal}} describes values that occur in some order of rank.
+		\begin{itemize}
+			\item Distance of two ordinal values hold no value.
+			\item Likert-type is like 'on a scale of 1-5'.
+		\end{itemize}
+	\item \emph{\textbf{Interval scale}} is a measure in which the distance between any two sequential values are the same.
+		\begin{itemize}
+			\item $-8^\circ$ to $-7^\circ$ is the same as $55^\circ$ to $56^\circ$
+		\end{itemize}
+	\item \emph{\textbf{Ratio scale}} has an absolute zero value, and is determined as a ratio.
+		\begin{itemize}
+			\item Screen brightness starts at 0\%, which means it is off, and goes to 100\%, which means it is fully brighten.
+		\end{itemize}
+	\item \emph{\textbf{Repeated values}} during ranking is called \emph{ties}.
+		\begin{itemize}
+			\item In case of tie, you give them the average of their rank values.
+		\end{itemize}
+\end{itemize}
+While there are some similarities to parametric testing, the nonparametric procedure follows as such:
+\begin{enumerate}
+	\item \emph{State the null (\emph{$H_{0}$}) and research (alternative/\emph{$H_{a}$}) hypothesis.}
+		\begin{itemize}
+			\item $H_{0}$ indicates no difference exists between conditions, groups, or variables.
+			\item $H_{a}$ indiciates there exists a difference between conditions, groups, or variables.
+				\begin{itemize}
+					\item Direction means a significant change in a particular direction (skewness).
+					\item Nondirectional means there is a change, but there are two tails (symmetric) and you cannot say there is a change in any direction.
+				\end{itemize}
+		\end{itemize}
+	\item \emph{Set the level of signifigance (usually, it is 5\%}).\\[2mm]
+		\begin{table}[h]
+		\centering
+		\begin{tabular}{c|c|c}
+			& \head{Fail to reject $H_{0}$} & \head{Reject $H_{0}$}\\
+			\hline
+			$H_{0}$ True & No error & Type \Romannum{1} error; $\alpha$\\
+			\hline
+			$H_{0}$ False & Type \Romannum{2} error; $\beta$ & No error\\[2mm]
+		\end{tabular}
+		\caption{Results of $H_{0}$ outcome.}
+		\end{table}
+	\item \emph{Use appropriate test statistic.}
+	\item \emph{Compute test statistic.}
+	\item \emph{Determine value needed for rejection of the $H_{0}$ using appropriate table of critical values for the perticular statistic.}
+	\item \emph{Compare obtained value with critical value.}
+		\begin{compactitem}
+			\item State whether or not to  reject $H_{0}$.
+		\end{compactitem}
+	\item \emph{Interperate results.}
+	\item \emph{Report results.}
+\end{enumerate}
 
 
 \end{document}
