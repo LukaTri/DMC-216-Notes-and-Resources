@@ -13,7 +13,7 @@
 \author{Luka Trikha}
 \maketitle
 
-\section{Chapter One}
+\section{Chapter One: Intro to Nonparametric Statistics}
 Parametric statistics is based around the idea that the given data is of a normal distribution. In conjunction, nonparametric statistics is based around data that is collected from a non-normal distribution. This can mean data that is purly nominal (categorical), ranked, based on scales, or simply, do not follow a normal distribution (either visually, or through mathematical tests).\\[2mm]
 Some parametric assumptions include samples that:
 
@@ -21,12 +21,12 @@ Some parametric assumptions include samples that:
 	\item Are randomly drawn from a normally distributed population.
 	\item Consists of indendent observations, except for paired values.
 	\item Consists of values on an interval or ratio measurement scale.
-	\item Have respective populations of aproximatily equal variance.
+	\item Have respective populations of approximately equal variance.
 	\item Are adequatitely large.
 		\begin{compactitem}
-		\item n > 30
-		\item n > 20
-		\item n > 10
+		\item $n > 30$
+		\item $n > 20$
+		\item $n > 10$
 		\item (Per group as an absolute minimum).
 		\end{compactitem}
 	\item Approximately resembles a normal distribution.
@@ -40,23 +40,23 @@ There are different ways to measure scales with the given data:
 				\begin{itemize}
 					\item male vs. female, heads vs. tails.
 				\end{itemize}
-			\item \emph{\textbf{Continous dichotomous}} has a measurement.
+			\item \emph{\textbf{Continuous dichotomous}} has a measurement.
 				\begin{itemize}
-					\item pass/fail, young/old
+					\item pass/fail, young/old.
 				\end{itemize}
 		\end{itemize}
 	\item \emph{\textbf{Ordinal}} describes values that occur in some order of rank.
 		\begin{itemize}
 			\item Distance of two ordinal values hold no value.
-			\item Likert-type is like 'on a scale of 1-5'.
+			\item Likert-type is 'on a scale of 1-5'.
 		\end{itemize}
 	\item \emph{\textbf{Interval scale}} is a measure in which the distance between any two sequential values are the same.
 		\begin{itemize}
-			\item $-8^\circ$ to $-7^\circ$ is the same as $55^\circ$ to $56^\circ$
+			\item $-8^\circ$ to $-7^\circ$ is the same as $55^\circ$ to $56^\circ$.
 		\end{itemize}
 	\item \emph{\textbf{Ratio scale}} has an absolute zero value, and is determined as a ratio.
 		\begin{itemize}
-			\item Screen brightness starts at 0\%, which means it is off, and goes to 100\%, which means it is fully brighten.
+			\item Screen brightness starts at $0\%$, which means it is off, and goes to $100\%$, which means it is fully brighten.
 		\end{itemize}
 	\item \emph{\textbf{Repeated values}} during ranking is called \emph{ties}.
 		\begin{itemize}
@@ -74,7 +74,7 @@ While there are some similarities to parametric testing, the nonparametric proce
 					\item Nondirectional means there is a change, but there are two tails (symmetric) and you cannot say there is a change in any direction.
 				\end{itemize}
 		\end{itemize}
-	\item \emph{Set the level of signifigance (usually, it is 5\%}).
+	\item \emph{Set the level of signifigance (usually, it is $5\%$}).
 	\item \emph{Use appropriate test statistic.}
 	\item \emph{Compute test statistic.}
 	\item \emph{Determine value needed for rejection of the $H_{0}$ using appropriate table of critical values for the perticular statistic.}
@@ -97,5 +97,175 @@ While there are some similarities to parametric testing, the nonparametric proce
 	\item \emph{Report results.}
 \end{enumerate}
 
+\section{Chapter Two: Testing Data for Normality}
+There are many different ways to figure out if the data you are using is normal. You can sometimes visualize it with a box-plot, histogram, and scatter plots. However, there are times that interpreting visualizations of data can not clearly tell you whether or not the data is normal. One way to find out if data is normal is by conducting some statistical math to find the skewness and kurtosis.
+\subsection{Describing data and the normal distribution}
+\emph{Sample} is a collection of several independent, random measurements of a
+particular variable associated with a population. When you have a large sample
+size, the more likely your data will be normalized. However, there are times
+when you do not have a lot of data, and sometimes your sample sizes can be less
+than 30. As stated earlier, having a sample size less than 30 can be a flag of
+non-normality, but there are ways to go about proving normality even with a small
+sample size. This measurement is called \emph{variance}, $s^2$. Variance describes the
+scale over which the samples vary about the mean value, and be computed using
+Formula \eqref{variance}:
+\begin{equation}\label{variance}
+	s^2=\frac{\sum\left(x_i-\bar x\right)^2}{n-1}
+%\[s^2=\frac{\sum(x_i-\bar x)^2}{n-1}\]
+\end{equation}
+Where $x_i$ is an individual value in the distribution, $\bar x$ is the
+distribution's mean, and $n$ is the number of values in the distribution.
+In order to compare sample variances, it is suggested to take the variance ratio
+by taking the largest sample variances and dividing it by the smallest sample
+variances.\\[2mm]
+A more common way of expressing sample variance is \emph{standard deviation},
+$s$; the standard deviation is the square root of variance where $s=\sqrt s^2$.
+Standard deviation can be calculated by using Formula \eqref{sd}:
+\begin{equation}\label{sd}
+	s=\sqrt{\frac{\sum\left(x_i-\bar x\right)^2}{n-1}}
+\end{equation}
+A small standard deviation indicated that a sample's values are fairly concentrated
+about its mean, whereas a large standard deviation indicates that a sample's values
+are fairly spread out.\\[2mm]
+If we want to compare two or more samples from different distributions, then we
+need to compute the \emph{standard score}. We can use the \emph{$z$-score} of the multiple
+distributions, and it can be calculated by Formula \eqref{zscore}:
+\begin{equation}\label{zscore}
+	z=\frac{x_i-\bar x}{s}
+\end{equation}
+where $x_i$ is an individual value in the distribution, $\bar x$ is the
+distribution's mean, and $s$ is the distribution's standard deviation.
+A $z$-score that is below the mean will always negative, while a $z$-score that
+is above the mean will always be positive.
+
+\subsection{Computing and Testing Kurtosis and Skewness for Sample Normality}
+\emph{\textbf{Kurtosis}} is a measure of a sample or population that identifie
+how flat or peaked it is with respect to a normal distribution. There are two 
+different distributions to identify kurtosis:
+\begin{itemize}
+	\item \emph{\textbf{Leptokurtic distribution}} has a positive (pointy)
+		kurtosis.
+	\item \emph{\textbf{Platykurtic distribution}} has a negative (flat)
+		kurtosis.
+\end{itemize}
+
+\emph{\textbf{Skewness}} is the horizontal symmetry with respect to a normal
+distribution. If a model is said to be skewed to the left, that means a
+distribution has a high concentration of data on the right side, and if a model
+is said to be skewed to the right, there distribution has a high concentration
+of data to the left. Right skewness is represented as a positive value, while
+left skewness is represented as a negative value.\\[2mm]
+There are five steps to determine sample normality in terms of kurtosis and skewness:
+\begin{enumerate}
+	\item \emph{Determine the sample's mean and standard deviation.}
+		\begin{compactitem}
+			\item You need to find the mean ($\bar x$) and the standard
+				deviation ($s$) first before computing kurtosis and skewness
+				values.
+			\item Recall to find sample standard deviation, use Formula
+				\eqref{sd}, and to find the sample mean, you can use Formula
+				\eqref{mean}.
+		\end{compactitem}
+	\item \emph{Determine the sample's kurtosis and skewness.}
+	\item \emph{Calculate the standard error of the kurtosis and the standard
+		error of the skewness.}
+	\item \emph {Calculate the $z$-score for the kurtosis and the $z$-score fo
+		the skewness.}
+	\item \emph{Calculate the $z$-score with the critical region obtained from
+		the normal distribution.}
+\end{enumerate}
+
+\begin{equation}\label{mean}
+	\bar x=\frac{\sum x_i}{n}\\[2mm]
+\end{equation}
+
+Where $\sum x_i$ is the sum of the values in the sample and $n$ is the number
+of values in the sample.
+The kurtosis $K$ and standard error of the kurtosis $SE_K$ are found using
+Formula \eqref{K} and \eqref{SEK} respectively:
+\begin{equation}\label{K}
+	K = \left[\frac{n(n+1)}{(n-1)(n-2)(n-3)}\sum\left(\frac{x_i - \bar x}{S}
+	\right)^4\right]-\frac{3(n-1)^2}{(n-2)(n-3)}
+\end{equation}
+
+and
+
+\begin{equation}\label{SEK}
+	SE_K=\sqrt{\frac{24n(n-1)^2}{(n-2)(n-3)(n+5)n+3)}}\\[2mm]
+\end{equation}
+
+The skewness $S_K$ and standard error of the skewness $SE_{S_K}$, are found
+using Formula \eqref{SK} and \eqref{SESK} respectively.
+\begin{equation}\label{SK}
+	S_K=\frac{n}{(n-1)(n-2)}\sum \left(\frac{x_i - \bar x}{s}\right)^3
+\end{equation}
+
+\begin{equation}\label{SESK}
+	SE_{S_K}=\sqrt{\frac {6n(n-1)}{(n-2)(n+1)(n+3)}}\\[2mm]
+\end{equation}
+
+Normality can be evaluated by using the $z$-score for the kurtosis, $z_K$, and
+the $z$-score for the skewness, $z_{S_K}$. You can use Formula \eqref{zK} and
+\eqref{zSK} respectively to find those $z$-scores:
+\begin{equation}\label{zK}
+	z_K=\frac{K-0}{SE_K}
+\end{equation}
+
+\begin{equation}\label{zSK}
+	z_{S_K}=\frac{S_K-0}{SE_{S_K}}\\[2mm]
+\end{equation}
+
+You then use these $z$-scores with the values of the normal distributionfor a
+desired level of confidence $\alpha$. If you set $\alpha = 0.05$, then the
+calculated $z$-scores for an approximately normal distribution must fall
+between $-1.96$ and $+1.96$.
+
+\subsection{Computing the Kolmogorov-Smirnov One-Sample Test}
+The Kolmogorov-Smirnov one-sample test is a procedure to examine the agreement
+between two sets of values; the test compares two cumulative frequency distributions.
+A cumulative frequency distribution is useful for finding the number of
+observations above or below a particular value in a data sample. It is
+created by taking a given frequency and adding all the preceding frequencies
+in the list. Once you create a cumulative distribution for the observed and
+empirical frequency distribution, the test will allow us to find the point at
+which the two distributions show the largest divergence; which is then used to
+identify a two-tailed probability estimate $p$ to determine if the samples are
+statistically similar or different
+
+To start, we need to find the empirical frequency distribution $\hat f_{x_i}$
+based on the observed sample. We calculate the observed frequency distribution's
+midpoint $M$ and standard deviation $s$. The midpoint and standard deviation
+are found using Formula \eqref{mid} and \eqref{empsd} respectivily:
+\begin{equation}\label{mid}
+	M = (x_{max} + x_{min}) \div 2\\[2mm]
+\end{equation}
+
+where $x_{max}$ is the largest value in the sample and $x_{min}$ is the
+smallest value in the sample, and
+
+\begin{equation}\label{empsd}
+	s =\sqrt{\frac{\sum \left(f_ix_i^2\right) - \frac{\left(\sum f_ix_i\right)^2} {n}} {n-1}}\\[2mm]
+\end{equation}
+where $x_i$ is a given value in the observed sample, $f_i$ is the frequency of
+a given value in the observed sample, and $n$ is the number of values in the
+observed sample.
+
+We now use the midpoint and standard deviation to calculate the $z$-scores
+[Formula \eqref{empz}] for the sample values of $x_i$.
+\begin{equation}\label{empz}
+	z = \left|\frac{x_i - M}{s}\right|\\[2mm]
+\end{equation}
+
+We now use the $z$-scores just obtained to determine the probability associated
+with each sample value, $\hat p_{x_i}$. These $p$-values are the relative
+frequencies of the empirical frequency distribution $\hat f_r$.
+
+Now, we find the relative values of the observed frequency distribution $f_r$
+using Formula \eqref{obsrel}:
+\begin{equation}\label{obsrel}
+	f_r=\frac{f_i}{n}\\[2mm]
+\end{equation}
+where $f_i$ is the frequency of a given value in the observed sample and $n$ is
+the number of values in the observed sample.
 
 \end{document}
