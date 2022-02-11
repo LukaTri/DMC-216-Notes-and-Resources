@@ -51,3 +51,4 @@ print(zk)
 #Now we check if the z-score is between -1.96 and 1.96. 
 #If it is we are good and this is not strong evidence that we are NOT normal.
 #We could still have other evidence of not being normal. After all, absence of proof is not innocence.
+
