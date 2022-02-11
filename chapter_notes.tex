@@ -119,7 +119,7 @@ In order to compare sample variances, it is suggested to take the variance ratio
 by taking the largest sample variances and dividing it by the smallest sample
 variances.\\[2mm]
 A more common way of expressing sample variance is \emph{standard deviation},
-$s$; the standard deviation is the square root of variance where $s=\sqrt s^2$.
+$s$; the standard deviation is the square root of variance where $s=\sqrt{s^2}$.
 Standard deviation can be calculated by using Formula \eqref{sd}:
 \begin{equation}\label{sd}
 	s=\sqrt{\frac{\sum\left(x_i-\bar x\right)^2}{n-1}}
@@ -221,6 +221,18 @@ calculated $z$-scores for an approximately normal distribution must fall
 between $-1.96$ and $+1.96$.
 
 \subsection{Computing the Kolmogorov-Smirnov One-Sample Test}
+--Compares two distributions to see if they can plausibly be from the same distribution.
+
+--Comonly used to test for normality.
+
+
+--Uses the point where the two diverge ithe most to form the test statistics.
+\subsection{KS-Test (One-Sample)}
+\begin{itemize}
+	\item Can be used to test a sample for normaility by comparing it to a normal distribution.
+	\item a "middle" and SD are computed and used as the mean and DS of the normal distribution.
+	\item Can also be used to test against any other distribution.
+\end{itemize}
 The Kolmogorov-Smirnov one-sample test is a procedure to examine the agreement
 between two sets of values; the test compares two cumulative frequency distributions.
 A cumulative frequency distribution is useful for finding the number of
