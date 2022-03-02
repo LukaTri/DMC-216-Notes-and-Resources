@@ -1,5 +1,7 @@
 todo.txt
 nonparametric_statistics_a_step-by-step_approach.pdf
+*.RData
+*.RHistory
 *.aux
 *.fdb_latexmk
 *.fls

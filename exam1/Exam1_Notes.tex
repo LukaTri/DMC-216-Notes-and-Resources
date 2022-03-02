@@ -1,0 +1,62 @@
+\documentclass[a4paper, 12pt] {article}
+
+\usepackage[T1]{fontenc}
+\usepackage{paralist}
+\usepackage{amsmath}
+\usepackage{romannum}
+
+\newcommand{\head}[1]{\textnormal{\textbf{#1}}}
+
+\begin{document}
+
+\title{Exam 1 Notes}
+\author{Luka Trikha}
+\maketitle
+
+\section{Kurtosis}
+The value of Kurtosis will tell you how pointy or flat a distribution is. Positive numbers mean it is really pointy, while negative numbers mean it is really flat. A Kurtosis value of $0$ means that it is around normal. To find the Kurtosis value, you will need the mean and standard deviation. You can also find the Standard Error of these values as well. The data should one numerical variables.
+\subsection{Relavent R-Commands}
+Use scripts from class. See R-Script
+
+\section{Skew}
+The Value of Skew will tell you how far your data is skewed. If the value is positive, that means there is a skew to the left. If the value is negative, that means there is a skew to the right. The type of data should be one numerical value.
+\subsection{Relavent R-Commands}
+Use scripts from class. See R-Script
+
+\section{KS-Test}
+Can be used to compare two numerical variables.
+\subsection{Relavent R-Commands}
+ks.test(data, distribution).
+ks.test(data1, data2).
+
+\section{Wilcoxon Sign-Rank Test}
+Paired numerical data. Can be good for cause-and-effect. For ties, ignore the the values. For ties in the ranking, take the average of the rankings.
+\subsection{Relavent R-Commands}
+
+\begin{compactitem}
+	\item wilcox.test(data1, data2, paired=TRUE).
+\end{compactitem}
+
+\section{Binomial (like coin-fipping)}
+One categorical variables with two levels (yes or no, black or white, 1's or 0's, heads of tails). Success-Failure condition: $np\geq 10$ and $n*(1-p)\geq10$.
+\subsection{Relavent R-Commands}
+
+\begin{compactitem}
+	\item binom.test(x,n,p, alternative=??), ? can be "greater", "less", "two-sided".
+\end{compactitem}
+
+\section{Sign Test}
+Paired numerical data. Can be good for cause-and-effect. For ties, ignore them.
+\subsection{Relavent R-Commands}
+
+\begin{compactitem}
+	\item binom.test
+\end{compactitem}
+
+\section{Combinatorics}
+It is the number of different ways certain combinations can be created between two numbers. One formula is called '$n$ Choose $k$'. The formula for this is: $\frac{n!}{k!(n-k)!}$.
+
+An example of a question for $n$ choose $k$ would be "How many ways can you draw exactly six cards from a pack of 10 cards?", where $n=10$ and $k=6$; hence, '$n$ choose $k$'.
+
+To find the number of possible outcomes there are, we can use exponents. For example, if we want to find how many possible outcomes there are for coin flips, we would use $2^n$, where $n$ is the number of trials we want to use.
+\end{document}
