@@ -26,8 +26,19 @@ Use scripts from class. See R-Script
 \section{KS-Test}
 Can be used to compare two numerical variables.
 \subsection{Relavent R-Commands}
-ks.test(data, distribution).
-ks.test(data1, data2).
+\begin{itemize}
+	\item{ks.test(data,distribution)}
+			\begin{compactitem}
+			\item{If we are comparing against a normal distribution, we use:
+
+					ks.test(dataset, pnorm, mean, sd)}
+			\item{Alternatively, if we are comparing against a uniform distribution, we use:
+
+					ks.test(dataset, punif, mean, sd)}
+
+			\end{compactitem}
+	\item{ks.test(data1, data2)}
+\end{itemize}
 
 \section{Wilcoxon Sign-Rank Test}
 Paired numerical data. Can be good for cause-and-effect. For ties, ignore the the values. For ties in the ranking, take the average of the rankings.
@@ -47,11 +58,19 @@ One categorical variables with two levels (yes or no, black or white, 1's or 0's
 
 \section{Sign Test}
 Paired numerical data. Can be good for cause-and-effect. For ties, ignore them.
+
+The notation for binomial distribution is as follows:
+\begin{compactitem}
+	\item{$P(X=k) =$ dbinom($k, n, p$)}
+	\item{$P(X\leq k) =$ pbinom($k, n, p$)}
+	\item{We use $X~B(n,p)$ to denote that $X$ is a binomial distribution with $n$ trials and a probability of $p$ for a success.}
+\end{compactitem}
 \subsection{Relavent R-Commands}
 
 \begin{compactitem}
 	\item binom.test
 \end{compactitem}
+
 
 \section{Combinatorics}
 It is the number of different ways certain combinations can be created between two numbers. One formula is called '$n$ Choose $k$'. The formula for this is: $\frac{n!}{k!(n-k)!}$.
